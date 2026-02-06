@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Resize Image to 20KB for SSC CGL/CHSL Form - Free Online Tool</title>
+    <meta name="description" content="Instantly resize your photo to 20KB-50KB for SSC application forms. Automatic dimension adjustment. No upload required.">
+    
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div class="container">
+    <nav><a href="../index.html">← Back to Dashboard</a></nav>
+
+    <div class="header-box">
+        <h1>Resize Image to 20KB for SSC</h1>
+        <p class="subtitle">Perfect for SSC CGL, CHSL, MTS & Stenographer Forms</p>
+    </div>
+
+    <div class="card tool-card">
+        <div class="upload-area">
+            <input type="file" id="upload-file" accept="image/*">
+            <p>Drop Photo Here</p>
+        </div>
+        
+        <div id="target-info" style="color: #f59e0b; margin: 15px 0;"></div>
+        <div id="status-text"></div>
+        <button id="download-btn" class="action-btn" style="display:none;">Download SSC Ready Image</button>
+    </div>
+
+    <script>
+        // This tells the shared logic what to do for THIS specific page
+        window.TOOL_CONFIG = {
+            examName: "SSC Exams",
+            maxSizeKB: 20,       // Logic will try to compress under 20KB
+            minSizeKB: 10,       // Optional floor
+            width: 350,          // SSC Standard width
+            height: 450,         // SSC Standard height
+            forceJPG: true       // SSC requires JPG
+        };
+    </script>
+
+    <script src="assets/image-logic.js"></script>
+
+</div>
+</body>
+</html>
