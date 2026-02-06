@@ -1,49 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Resize Image to 20KB for SSC CGL/CHSL Form - Free Online Tool</title>
-    <meta name="description" content="Instantly resize your photo to 20KB-50KB for SSC application forms. Automatic dimension adjustment. No upload required.">
+    <title>Resize Image to 20KB for SSC CGL/CHSL | OmniTools</title>
+    <meta name="description" content="Free tool to resize photo to 20KB-50KB for SSC exams. Automatic dimension fix (3.5cm x 4.5cm).">
     
-    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* (Copy your standard body/card CSS here or link a shared style.css) */
+        /* Basic styling for the tool */
+        body { background: #09090b; color: #ededef; font-family: sans-serif; padding: 20px; display:flex; flex-direction:column; align-items:center; }
+        .card { background: #0c0c0e; padding: 30px; border-radius: 16px; border: 1px solid #1f1f22; max-width: 500px; width: 100%; text-align: center; }
+        .drop-zone { border: 2px dashed #3f3f46; padding: 40px; border-radius: 12px; cursor: pointer; margin: 20px 0; transition:0.2s; }
+        .drop-zone:hover { border-color: #f59e0b; background: rgba(245,158,11,0.05); }
+        .btn { background: #f59e0b; color: #000; padding: 12px 24px; border-radius: 8px; border: none; font-weight: bold; cursor: pointer; width:100%; }
+        #preview-img { max-width: 150px; margin: 20px auto; border: 2px solid #f59e0b; border-radius: 4px; display:none; }
+    </style>
 </head>
 <body>
 
-<div class="container">
-    <nav><a href="../index.html">← Back to Dashboard</a></nav>
-
-    <div class="header-box">
-        <h1>Resize Image to 20KB for SSC</h1>
-        <p class="subtitle">Perfect for SSC CGL, CHSL, MTS & Stenographer Forms</p>
-    </div>
-
-    <div class="card tool-card">
-        <div class="upload-area">
-            <input type="file" id="upload-file" accept="image/*">
-            <p>Drop Photo Here</p>
-        </div>
+    <div class="card">
+        <a href="index.html" style="color:#a1a1aa; text-decoration:none; float:left; font-size:0.9rem;">← Back</a>
+        <br>
         
-        <div id="target-info" style="color: #f59e0b; margin: 15px 0;"></div>
-        <div id="status-text"></div>
-        <button id="download-btn" class="action-btn" style="display:none;">Download SSC Ready Image</button>
+        <h1 style="color:#f59e0b; margin-bottom:5px;">SSC Photo Resizer</h1>
+        <p style="color:#a1a1aa; font-size:0.9rem;">Resize image to 20KB - 50KB (3.5 x 4.5cm)</p>
+
+        <div class="drop-zone" id="drop-zone">
+            <i class="fa-solid fa-cloud-arrow-up" style="font-size: 2rem; color: #f59e0b; margin-bottom:10px;"></i>
+            <p>Click to Upload Photo</p>
+            <input type="file" id="file-input" hidden accept="image/*">
+        </div>
+
+        <div id="target-text" style="font-size:0.8rem; color:#a1a1aa; margin-bottom:15px;"></div>
+        
+        <img id="preview-img">
+        <div id="status-text" style="margin-bottom:15px;"></div>
+        
+        <button id="download-btn" class="btn" style="display:none;">Download Image</button>
     </div>
 
     <script>
-        // This tells the shared logic what to do for THIS specific page
         window.TOOL_CONFIG = {
-            examName: "SSC Exams",
-            maxSizeKB: 20,       // Logic will try to compress under 20KB
-            minSizeKB: 10,       // Optional floor
-            width: 350,          // SSC Standard width
-            height: 450,         // SSC Standard height
-            forceJPG: true       // SSC requires JPG
+            examName: "SSC Exam",  // Name for filename
+            maxSizeKB: 50,         // SSC Max size is 50KB
+            width: 350,            // Approx pixels for 3.5cm
+            height: 450            // Approx pixels for 4.5cm
         };
     </script>
 
     <script src="assets/image-logic.js"></script>
 
-</div>
 </body>
 </html>
